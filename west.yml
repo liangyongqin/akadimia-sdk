@@ -5,7 +5,7 @@ manifest:
     - name: zephyr
       url-base: https://github.com/zephyrproject-rtos/zephyr
 
-    projects:
-      - name: zephyr
-        remote: zephyr
-        revision: v4.0.0
+  projects:
+    - name: zephyr
+      remote: zephyr
+      revision: v4.0.0

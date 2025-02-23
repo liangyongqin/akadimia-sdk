@@ -1,0 +1,11 @@
+manifest:
+  remotes:
+    - name: akadimia-sdk
+      url-base: https://github.com/liangyongqin/akadimia-sdk
+    - name: zephyr
+      url-base: https://github.com/zephyrproject-rtos/zephyr
+
+    projects:
+      - name: zephyr
+        remote: zephyr
+        revision: v4.0.0

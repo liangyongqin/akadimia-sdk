@@ -1,0 +1,5 @@
+board:
+  name: aether_v1
+  vendor: aether
+  socs:
+    - name: stm32f429xx

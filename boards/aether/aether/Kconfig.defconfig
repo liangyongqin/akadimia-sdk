@@ -1,0 +1,8 @@
+# STM32F4DISCOVERY board configuration
+
+# Copyright (c) 2016 Linaro Limited.
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_AETHER_V1
+
+endif # BOARD_AETHER_V1

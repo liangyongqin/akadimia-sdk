@@ -1,0 +1,92 @@
+/dts-v1/;
+#include <st/f4/stm32f429Ig.dtsi>
+#include <st/f4/stm32f429i(e-g)tx-pinctrl.dtsi>
+/ {
+    model = "embeddeddired challenger stm32f429 board";
+    compatible = "embeddeddired,challenger";
+
+    chosen {
+        zephyr,console = &usart1;
+        zephyr,shell-uart = &usart1;
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zephyr,ccm = &ccm0;
+    };
+
+    gpio-leds {
+        compatible = "gpio-leds";
+        red_led: led_0 {
+            gpios = <&gpioh 10 GPIO_ACTIVE_HIGH>;
+			label = "red led";
+        };
+        green_led: led_1 {
+            gpios = <&gpioh 11 GPIO_ACTIVE_HIGH>;
+			label = "green led";
+        };
+        blue_led: led_2 {
+            gpios = <&gpioh 12 GPIO_ACTIVE_HIGH>;
+			label = "blue led";
+        };
+    };
+
+	gpio-keys {
+		compatible = "gpio-keys";
+		key_0: key_0 {
+			gpios = <&gpioc 13 GPIO_ACTIVE_HIGH>;
+			label = "key 0";
+		};
+		key_1: key_1 {
+			gpios = <&gpioa 0 GPIO_ACTIVE_HIGH>;
+			label = "key 1";
+		};
+	};
+
+    aliases {
+        led0 = &red_led;
+        led1 = &green_led;
+        led2 = &blue_led;
+		key0 = &key_0;
+		key1 = &key_1;
+    };
+
+};
+
+&clk_lsi {
+	status = "okay";
+};
+
+&clk_hse {
+	clock-frequency = <DT_FREQ_M(25)>;
+	status = "okay";
+};
+
+&pll {
+	div-m = <15>;
+	mul-n = <216>;
+	div-p = <2>;
+	div-q = <4>;
+	clocks = <&clk_hse>;
+	status = "okay";
+};
+
+&rcc {
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(180)>;
+	ahb-prescaler = <1>;
+	apb1-prescaler = <4>;
+	apb2-prescaler = <2>;
+};
+
+&usart1 {
+	pinctrl-0 = <&usart1_tx_pa9 &usart1_rx_pa10>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+	status = "okay";
+};
+
+&i2c1 {
+	pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
+	pinctrl-names = "default";
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_FAST>;
+};

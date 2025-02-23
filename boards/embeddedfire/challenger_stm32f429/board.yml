@@ -1,0 +1,5 @@
+board:
+  name: challenger_stm32f429
+  vendor: embeddedfire 
+  socs:
+    - name: stm32f429xx

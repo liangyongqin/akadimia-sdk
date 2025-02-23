@@ -1,0 +1,11 @@
+identifier: aether_v1
+name: aether aether_v1
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+ram: 192
+flash: 2048
+supported:
+  - i2c
+vendor: aether

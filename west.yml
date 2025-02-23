@@ -1,9 +1,12 @@
 manifest:
+  self:
+    path: akadimia-sdk
+    
   remotes:
     - name: akadimia-sdk
-      url-base: https://github.com/liangyongqin/akadimia-sdk
+      url-base: https://github.com/liangyongqin
     - name: zephyr
-      url-base: https://github.com/zephyrproject-rtos/zephyr
+      url-base: https://github.com/zephyrproject-rtos
 
   projects:
     - name: zephyr

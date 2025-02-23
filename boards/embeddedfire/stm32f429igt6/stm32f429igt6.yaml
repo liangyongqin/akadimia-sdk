@@ -1,0 +1,16 @@
+identifier: stm32f429igt6
+name: STM32F429IGT6
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  # - gnuarmemb
+  # - xtools
+ram: 192
+flash: 2048
+supported:
+  # - counter
+  - i2c
+  - spi
+  # - display
+vendor: st
